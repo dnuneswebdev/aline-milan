@@ -1,0 +1,435 @@
+
+/*
+# ------------------- #
+# Dnunesdev           #
+# Copyright © 2022    #
+# All rights reserved #
+# ------------------- #
+/* COLORS 
+$black: #2B2B2B;
+$grey: #828282;
+$white: #E5E2D8; 
+$bronze: #785F37;
+*/
+
+@font-face {
+  font-family: tex;
+  src: url(../fonts/texgyreheros-regular.otf);
+}
+
+@font-face {
+  font-family: constantia;
+  src: url(../fonts/constan.ttf);
+}
+
+/* -------------------------------------------------- */
+/* Default */
+/* -------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+}
+
+html,
+body {
+  color: #333;
+  font-family: tex, cursive;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header,
+footer {
+  flex: none;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* -------------------------------------------------- */
+a,
+a:link,
+a:hover,
+a:active,
+a:visited {
+  transition: 0.3s all;
+  text-decoration: none;
+  -moz-transition: 0.3s all;
+  -o-transition: 0.3s all;
+  -webkit-transition: 0.3s all;
+}
+
+p a,
+p a:link,
+p a:hover,
+p a:active,
+p a:visited {
+  color: #333;
+  font-family: tex !important;
+}
+
+/* -------------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+/* -------------------------------------------------- */
+/* UTILS */
+/* -------------------------------------------------- */
+.section-p {
+  padding: 5rem 0px;
+}
+
+.g-btn-1 {
+  padding: 1rem;
+  background: transparent;
+  border: 1px solid #BEBEBE;
+  color: #BEBEBE;
+  font-size: 1.4rem;
+}
+
+.g-btn-1:hover {
+  background: #BEBEBE;
+  color: #1F1F1F;
+}
+
+.g-title {
+  font-size: 3rem;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.mb-10 {
+  margin-bottom: 1rem;
+}
+
+.mb-20 {
+  margin-bottom: 2rem;
+}
+
+.mt-35 {
+  margin-top: 3.5rem;
+}
+
+.mt-20 {
+  margin-top: 2rem;
+}
+
+.mt-80 {
+  margin-top: 8rem;
+}
+
+/* -------------------------------------------------- */
+/* TITLES */
+/* -------------------------------------------------- */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 1rem;
+  font-family: constantia;
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #785F37;
+  bottom: 0;
+  left: 0;
+}
+
+/* -------------------------------------------------- */
+/* TARGETS */
+/* -------------------------------------------------- */
+.dark-navbar {
+  background: #E5E2D8 !important;
+  padding: 1rem !important;
+  border-bottom: 1px solid #BC9B5D;
+}
+
+.dark-navbar a {
+  color: #785F37 !important;
+}
+
+.logo-small {
+  height: 8rem !important;
+}
+
+/* -------------------------------------------------- */
+/* HEADER NAVBAR */
+/* -------------------------------------------------- */
+.static-top {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  position: fixed;
+  width: 100%;
+  padding: 1rem 0;
+  z-index: 10;
+  transition: all 0.3s;
+}
+
+.static-top-menu {
+  padding-inline-start: 0;
+  margin: 0 auto;
+}
+
+.static-top-menu li{
+  list-style: none;
+  display: inline;
+  font-size: 1.4rem;
+}
+
+.static-top-menu li:not(:last-child) {
+  margin-right: 5rem;
+}
+
+.static-top-menu a {
+  letter-spacing: 1.2px;
+  color: #FFF;
+}
+
+.static-top-menu a:hover {
+  color: #785F37;
+}
+
+.logo {
+  height: 12rem;
+  transition: all .3s;
+}
+
+.navbar-brand {
+  margin-left: 1rem;
+  text-transform: capitalize;
+  position: relative;
+  font-size: 1.6rem;
+  color: #2B2B2B !important;
+  font-family: constantia;
+}
+
+.navbar-brand span {
+  color: #785F37;
+}
+
+.navbar-light {
+  background: #E5E2D8;
+  font-size: 1.4rem;
+  z-index: 16;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #785F37;
+}
+
+.navbar-light .navbar-nav .nav-item {
+  margin-right: 2rem;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #785F37;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #785F37;
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.navbar-toggler {
+  padding: .5rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
+
+/* -------------------------------------------------- */
+/* HERO */
+/* -------------------------------------------------- */
+.hero {
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.95)),
+  url(/img/hero-bg-1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  color: #785F37;
+  letter-spacing: 1px;
+  font-family: constantia;
+}
+
+.hero-subtitle {
+  font-size: 2.4rem;
+  color: #785F37;
+}
+
+.hero-subtitle-text {
+  font-size: 1.8rem;
+  color: #E5E2D8;
+}
+
+.hero-write {
+  font-size: 1.6rem;
+  color: #F7F7F7;
+}
+
+/* -------------------------------------------------- */
+/* ABOUT */
+/* -------------------------------------------------- */
+.about {
+  background: url(/img/blizzard.png) repeat #E5E2D8; 
+}
+
+.about-img-box {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.about-img {
+  height: 41rem;
+  border-radius: 4px;
+}
+
+.about-text {
+  font-size: 1.4rem;
+  text-align: justify;
+}
+
+/* -------------------------------------------------- */
+/* SPECIALTIES */
+/* -------------------------------------------------- */
+.specialties-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.specialties i {
+  font-size: 3.5rem;
+  color: #785F37;
+  margin-bottom: 1.5rem;
+}
+
+.specialties h4 {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+
+/* -------------------------------------------------- */
+/* CONSULT */
+/* -------------------------------------------------- */
+.consult {
+  background: url(/img/blizzard.png) repeat #E5E2D8; 
+}
+
+.consult p {
+  font-size: 1.4rem;
+  text-align: justify;
+}
+
+.consult h3 {
+  margin-right: 10px;
+  color: #785F37;
+}
+
+/* -------------------------------------------------- */
+/* TESTIMONIALS */
+/* -------------------------------------------------- */
+.testimonials {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+  url(/img/padma-pattern.png);
+}
+
+.testimonials img {
+  width: 100%;
+  margin-top: 1rem;
+  height: 135px;
+}
+
+
+/* -------------------------------------------------- */
+/* FOOTER */
+/* -------------------------------------------------- */
+.footer {
+  background: #2B2B2B;
+  color: #E5E2D8;
+  font-size: 1.4rem;
+}
+
+.footer h2{
+  font-size: 3.2rem;
+  color: #785F37;
+  letter-spacing: 1px;
+  font-family: constantia;
+}
+
+.footer h5 {
+  font-size: 1.6rem;
+  color: #785F37;
+}
+
+footer .external {
+  color: #E5E2D8;
+}
+
+footer .copyright {
+  border-top: 1px dashed #785F37;
+  color: #828282;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* -------------------------------------------------- */
+/* RESPONSIVE */
+/* -------------------------------------------------- */
+@media (max-width: 768px) {
+  .mobile-nav {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .static-top {
+    display: none;
+  }
+  .hero-title {
+    text-align: center;
+  }
+  .about-img-box {
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  .specialties-box:not(:first-child) {
+    margin-top: 3rem;
+  }
+}
